@@ -79,6 +79,7 @@ body {
     color: rgb(92, 61, 150);
     height: 50px;
     width: 300px;
+    outline: none;
     cursor: pointer;
 }
 

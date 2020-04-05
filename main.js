@@ -9,7 +9,8 @@ var container;
 var tiposDeErros = [
     { erro: "Adicione ao menos um valor!" },
     { erro: "O campo não pode ficar vazio <br/>por favor selecione um número de 1 a 100" },
-    { erro: "O número tem de estar entre 1 e 100" }
+    { erro: "O número tem de estar entre 1 e 100" },
+    { erro: "Informe apenas números inteiros!" }
 ]
 
 
@@ -33,7 +34,7 @@ function setError(estado, cod = -1) {
         try {
             errors.innerHTML = tiposDeErros[cod].erro;
         } finally {
-            // 123
+            // TO DO..
         }
 
 
@@ -47,7 +48,9 @@ function setError(estado, cod = -1) {
 function Adicionar() {
     var numero = Number(input.value);
 
-    if (vetor.indexOf(numero) >= 0) {
+    if (!Number.isInteger(numero)) {
+        setError(true, 3);
+    } else if (vetor.indexOf(numero) >= 0) {
         errors.innerHTML = `O número <strong>${numero}</strong> já existe no vetor`;
         setError(true);
     } else if (Math.sign(numero) == 1 && (numero >= 1 && numero <= 100)) {

@@ -90,7 +90,7 @@ function Analisar() {
 
     }, 800)
 
-    analise.innerHTML = `<div class="valores">${vetor}</div>
+    analise.innerHTML = `<div class="valores">${vetor.join(' - ')}</div>
                 <br/>
                 <p>O vetor possui <strong>${vetor.length}</strong> elementos<br>
                 O maior valor do vetor é <strong>${MaiorValor()}</strong><br>
